@@ -1,0 +1,9 @@
+ #이런식으로 리턴 하세요 라고 resolver에게 보냄 -> 가이드라인 
+type jin{
+    name:String!
+    age:String!
+    gender:Int!
+}
+type Query{
+    person: jin!
+}
