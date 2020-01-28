@@ -1,9 +1,15 @@
  #이런식으로 리턴 하세요 라고 resolver에게 보냄 -> 가이드라인 
-type jin{
-    name:String!
-    age:String!
-    gender:Int!
+type Movie{
+    id:Int!
+    movieName:String!
+    score:Int!
 }
 type Query{
-    person: jin!
+    movies: [Movie]!
+    movie(id:Int!):Movie
+}
+#Database 상태가 변할 때 사용됌
+type Mutation{
+    addMovie(movieName:String!,score:Int!) : Movie
+    deleteMovie(id:Int!) : Boolean!
 }
