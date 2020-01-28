@@ -1,15 +1,12 @@
  #이런식으로 리턴 하세요 라고 resolver에게 보냄 -> 가이드라인 
 type Movie{
     id:Int!
-    movieName:String!
-    score:Int!
+    title:String!
+    rating:Float!
+    summary:String!
+    language:String!
+    medium_cover_image:String!
 }
 type Query{
-    movies: [Movie]!
-    movie(id:Int!):Movie
-}
-#Database 상태가 변할 때 사용됌
-type Mutation{
-    addMovie(movieName:String!,score:Int!) : Movie
-    deleteMovie(id:Int!) : Boolean!
+    movies(limit:Int,rating:Float): [Movie]!
 }
